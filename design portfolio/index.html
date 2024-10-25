@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videography Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #000;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            margin: 0 20px;
+            color: #f4f4f4;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        nav a:hover {
+            color: #666;
+        }
+
+        /* Container Styles */
+        .container {
+            width: 80%;
+            margin: 80px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Home Page */
+        .home-intro {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .intro-text {
+            width: 60%;
+            padding-right: 20px;
+        }
+        .intro-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #000;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .intro-text p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .intro-image {
+            width: 35%;
+        }
+        .intro-image img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        /* Portfolio Page */
+        .portfolio-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        .portfolio-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .portfolio-text {
+            width: 50%;
+            padding: 20px;
+        }
+        .portfolio-video {
+            width: 45%;
+        }
+        .portfolio-video iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 12px;
+        }
+
+        /* Posters Page */
+.poster-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.poster-image {
+    width: 300px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.poster-image img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain image aspect ratio */
+    border-radius: 12px; /* Keep rounded corners for modern look */
+}
+
+.poster-text {
+    width: 50%; /* Ensure text takes up the remaining space */
+    padding: 20px;
+}
+        
+
+/* Contact Page */
+.contact-info {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Contact Text and Links */
+.contact-info h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.contact-info a:hover {
+    border-bottom: 2px solid #666; /* Adds a hover effect to the links */
+}
+
+/* Social Links */
+.socials p {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Design Elements */
+.contact-info::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    top: -30px;
+    left: -30px;
+}
+
+.contact-info::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    bottom: -50px;
+    right: -50px;
+}
+
+        /* Modern Background Accent Elements */
+        .background-accent {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        .accent-circle {
+            width: 150px;
+            height: 150px;
+        }
+        .accent-top-left {
+            top: 100px;
+            left: 50px;
+        }
+        .accent-bottom-right {
+            bottom: 100px;
+            right: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#portfolio">Videos</a>
+        <a href="#posters">Graphic Design</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home">
+        <div class="container home-intro">
+            <div class="intro-text">
+                <h1>I’m Stef and this is my Design Portfolio</h1>
+                <p>Hello, I'm Maria Stefania or Stef, a First Year student at NHL Stenden majoring in Communication and Multimedia Design and before I graduated at Traian Theoretical Highschool in Programming and Math. I'm a passionate person that wishes to tell stories through art. I am an animator, video editor, graphic designer and I dabble a little in everything. I invite you to explore my work and contact me.</p>
+            </div>
+            <div class="intro-image">
+                <img src="me.png" alt="Your photo">
+            </div>
+        </div>
+    </section>
+<section id="video-projects">
+    <div class="container">
+        <h1 style="font-family: 'Montserrat', sans-serif; color: #000; font-size: 48px; margin-bottom: 20px;">Video Projects</h1>
+    </div>
+</section>
+
+        <!-- Portfolio Page -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="portfolio-item">
+                <div class="portfolio-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Uqs61SqDXJk?si=g_3XjCcYnKttSvAe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-text">
+                    <h2> Writing on the Wall</h2>
+                    <p>One of my proudest works, this animatic was made for the Filmmic 2024, a national film festival, on the theme of "Lost in the Rhythm". With this work, I explored the process behind an artist using the original song of the same name by Will Stetson that perfectly presents the life, the struggles and the overall good and bad of being a creative. The entire work, editing, and art was made by me, and the project won Third place in the contest.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6xjdS1JzbEQ?si=lfci-u_LGahBD6Wl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-text">
+                    <h2>Vin si Pastile</h2>
+                    <p>Vin si Pastile was a work that was comissioned by a close friend of mine, who payed for me to create a visual to one of their favorite songs. I drew inspiration from my own life and I tried to present the atmosphere and lyrics of the song with the dark aesthetic. The entire project, editing and artwork was made by me.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-video">
+                   <iframe width="560" height="315" src="https://www.youtube.com/embed/GGd__1ploWc?si=Pe5wHaPEFwbjKUiq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-text">
+                    <h2>No body no crime</h2>
+                    <p>This project was another comission by a close aquaintance who wanted a visual to a song by this artist. I chose this song for its great story-telling and lyricism and made the visual follow the story of the song, with the characters being based on the person's wishes. The entire project was made by me.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/lkG1qSS6Bzg?si=vMJBN6Om5oLeSohw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-text">
+                    <h2>Reichstagsgebäude Presentation</h2>
+                    <p>This project was created for an assignment in school to make a presentation about a historic german location already given to us. Me and my teammate chose to work with a video project to make a more unique and interesting work rather than the usual powerpoint presentations. The video showcases information about the object in a quick and to-the-point manner. Editing and artwork was done by me, the voice-over and script was made by my teammate.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IJxLmW1jxHk?si=VY0Z7uBeOXHyccsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-text">
+                    <h2>A Silence of the Lambs Presentation</h2>
+                    <p>An illustrated video presentation about a famous scary movie made for a highschool assignment. It presents in a light-hearted manner the genre, film, characters and the book vs film. I've worked on the script, narration, artwork and editing, while my teammates narrated and did the video-acting segment.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/P9NvnJU0Jq8?si=4feDV5ZHOe7n1DTd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-text">
+                    <h2>Junimea Presentation</h2>
+                    <p>My first ever illustrated presentation for highschool, it was an assignment graded based on originality of the presentation, as all teams had the same topic. We chose to do this half-film half-illustration project to captivate and retain attention as well as showcase our abilities. I've worked on half of the artwork, editing and script-writing while my teammates recorded, narrated and helped with artwork.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/HrSfGU82_nM?si=t1BrpdyEAq6j5EHQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-text">
+                    <h2>Queen Victoria and George V Presentation</h2>
+                    <p>Another illustrated presentation for highschool, this time on the theme of British Royals already given to us. The video showcases all the relevant information about the life of the said royalsm, presented in a dynamic matter including segments of narrated diary entries for Queen Victoria. I worked on the editing, half of the artwork, script and narration while my teammates did the videography, other half of artwork and narration.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-video">
+                   <iframe width="560" height="315" src="https://www.youtube.com/embed/NSu6ujKggjs?si=ZWf_I9-fHtIsuTSP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-text">
+                    <h2>Vox Pox Interview</h2>
+                    <p>A project assigned to us during our 10 Design Challenges at University, where we had to do a small and short interview, asking strangers one question. I worked on the editing of this project while my teammates worked on interviewing and videography.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/YvOwIMQgpww?si=mqApAEpoHECrK9aC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-text">
+                    <h2>Vox Pox Bloopers</h2>
+                    <p>Unlike the previous entry, this wasn't part of the assignment but a request by my teammates to include our extra-cuts in a funny short-clip. The clip is edited by me and it showcases my ability to edit both professional and also light-hearted comedic videos.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qFontD1b-ro?si=MkDiB6X9PP3a0GqR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-text">
+                    <h2>Ciggarettes' Revenge</h2>
+                    <p>Another project from our University's 10 Design Challenges, this time a Stop-Motion animation on the theme of "The secret life of trash". I worked with my teammate to tell a short but memorable story of cleaning up after oneself to spread a good message. I worked on the storyboards, editing and taking photos while my teammate worked on moving the objects and animating.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="graphic-design">
+    <div class="container">
+        <h1 style="font-family: 'Montserrat', sans-serif; color: #000; font-size: 48px; margin-bottom: 20px;">Graphic Design Projects</h1>
+    </div>
+</section>
+
+    <!-- Posters Page -->
+    <section id="posters">
+        <div class="container">
+            <div class="poster-item">
+                <div class="poster-image">
+                    <img src="poster1.jpg" alt="Poster 1">
+                </div>
+                <div class="poster-text">
+                    <h2>De Bote Poster</h2>
+                    <p>This poster was created for our first design project at University to present our theme of The Skene Brothers and the 06 telephone lines. It showcases a semi-nude woman in a fluid motion with simple graphical elements and following the color scheme of the project, with the intention to capture attention and curiosity and draw the target group to the project.</p>
+                </div>
+            </div>
+
+            <div class="poster-item">
+                <div class="poster-image">
+                    <img src="irina.jpg" alt="Poster 2">
+                </div>
+                <div class="poster-text">
+                    <h2>Irina Rimes Poster</h2>
+                    <p>A poster made as part of the 10 Design Challenges, where we had to focus on typography. I sketched and drew the letters of the artist's name using elements that fit her image and style (musical elements, wine bottle from music lyrics) and I kept the rest simple as to highlight the work that went into the custom-text.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+<section id="contact">
+    <div class="container contact-info">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="ionmaria1031@gmail.com">ionmaria1031@gmail.com</a></p>
+        <p>Phone: <a href="tel:+40736079477">+40 736 079 477</a></p>
+        <div class="socials">
+            <p>Instagram: <a href="https://www.instagram.com/ascension.wav?igsh=MTRlcmQyaDNkZGVzcQ==" target="_blank">@ascension.wav</a></p>
+        </div>
+    </div>
+</section>
+
+    <!-- Background Accent Elements -->
+    <div class="background-accent accent-circle accent-top-left"></div>
+    <div class="background-accent accent-circle accent-bottom-right"></div>
+
+</body>
+</html>
